@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTTP Cat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🐱 HTTP Cat Viewer</h1>
+
+    <p>Select or enter an HTTP Status Code</p>
+
+    <!-- Dropdown -->
+    <select id="statusSelect" onchange="syncInput()">
+        <option value=""> Common Status Codes </option>
+        <option value="200">200 - OK</option>
+        <option value="201">201 - Created</option>
+        <option value="301">301 - Moved Permanently</option>
+        <option value="400">400 - Bad Request</option>
+        <option value="401">401 - Unauthorized</option>
+        <option value="403">403 - Forbidden</option>
+        <option value="404">404 - Not Found</option>
+        <option value="500">500 - Internal Server Error</option>
+        <option value="503">503 - Service Unavailable</option>
+    </select>
+
+    <!-- Manual input -->
+    <input 
+        type="number" 
+        id="statusCode" 
+        placeholder="Or type status code"
+        onkeydown="handleEnter(event)"
+    >
+
+    <button onclick="showCat()">Show Cat</button>
+    <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+
+    <p id="description"></p>
+
+    <div class="image-box">
+        <img id="catImage" alt="">
+    </div>
+
+    <p id="errorMessage"></p>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
